@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daftar & Masuk</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/css/signup_login.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="form-container">
+      <div id="form-switcher" class="form-switcher">
+        <button id="btn-signup" class="active">Daftar</button>
+        <button id="btn-login">Masuk</button>
+      </div>
+
+      <form id="signup-form" class="form active" novalidate>
+        <h2>Sign Up</h2>
+        <input type="text" name="username" placeholder="Nama Pengguna" required />
+        <input type="email" name="email" placeholder="Alamat Email" required />
+        <input type="tel" name="phone" placeholder="No. Telepon" pattern="[0-9]+" required />
+        <input type="password" name="password" placeholder="Kata Sandi" required minlength="6" />
+        <button type="submit">Daftar</button>
+      </form>
+
+      <form id="login-form" class="form" novalidate>
+        <h2>Login</h2>
+        <input type="email" name="email" placeholder="Alamat Email" required />
+        <input type="password" name="password" placeholder="Kata Sandi" required />
+        <button type="submit">Masuk</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="/src/js/signup_login.js"></script>
+</body>
+</html>
