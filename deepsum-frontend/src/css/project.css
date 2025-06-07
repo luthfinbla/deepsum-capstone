@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('Screenshot 2025-05-30 at 00.10.36.png') center/cover no-repeat;
+  overflow-x: hidden;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background-color: #04363e;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  overflow-y: auto;     
+  height: 100vh;      
+  position: sticky; 
+  top: 0;
+}
+
+.user-info {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 0 auto 10px;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.nav-menu a {
+  padding: 15px 30px;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.nav-menu a:hover {
+  background-color: #1d5c65;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.nav-menu .menu-item.active {
+  background-color: #e5f8f9;
+  color: #04363e;
+  border-radius: 0 25px 25px 0;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #04363e;
+  height: 100vh;
+  overflow-y: auto;   
+}
+
+.main-content h1 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.project-section, .menu1-section {
+  padding: 40px;
+}
+
+.project-list {
+  list-style: none;
+  padding: 0;
+}
+
+.project-item {
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  background-color: rgba(4, 54, 62, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.project-item:hover {
+  background-color: rgba(4, 54, 62, 0.2);
+}

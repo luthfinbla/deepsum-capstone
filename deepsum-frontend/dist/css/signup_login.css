@@ -4,8 +4,8 @@
 
 body {
   margin: 0;
-  font-family: 'Jost', sans-serif;
-  background: url('/src/images/bg.png') no-repeat center center/cover;
+  font-family: "Jost", sans-serif;
+  background: url("/src/images/bg.png") no-repeat center center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,8 +18,8 @@ body {
   width: 360px;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-  color: #145D66;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  color: #145d66;
 }
 
 .form-container {
@@ -30,7 +30,7 @@ body {
   display: flex;
   justify-content: space-around;
   margin-bottom: 1.5rem;
-  border-bottom: 3px solid #78AFAA;
+  border-bottom: 3px solid #78afaa;
 }
 
 .form-switcher button {
@@ -38,7 +38,7 @@ body {
   padding: 1rem 0;
   font-weight: 600;
   font-size: 1.1rem;
-  color: #145D66;
+  color: #145d66;
   background: transparent;
   border: none;
   border-bottom: 3px solid transparent;
@@ -47,8 +47,8 @@ body {
 }
 
 .form-switcher button.active {
-  border-color: #78AFAA;
-  color: #145D66;
+  border-color: #78afaa;
+  color: #145d66;
   font-weight: 700;
 }
 
@@ -70,7 +70,7 @@ h2 {
   margin-bottom: 1.2rem;
   font-weight: 700;
   font-size: 1.6rem;
-  color: #145D66;
+  color: #145d66;
 }
 
 h2 span {
@@ -81,20 +81,20 @@ input {
   width: 100%;
   padding: 12px 15px;
   font-size: 1rem;
-  border: 0.5px solid #145D66;
+  border: 0.5px solid #145d66;
   border-radius: 6px;
   outline: none;
   transition: border-color 0.3s ease;
 }
 
 input:focus {
-  border-color: #78AFAA;
+  border-color: #78afaa;
 }
 
 button[type="submit"] {
   margin-top: 1.5rem;
   padding: 12px;
-  background-color: #145D66;
+  background-color: #145d66;
   border: none;
   border-radius: 6px;
   color: #fff;
@@ -105,7 +105,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #145D66;
+  background-color: #145d66;
 }
 
 @keyframes fadeInUp {
