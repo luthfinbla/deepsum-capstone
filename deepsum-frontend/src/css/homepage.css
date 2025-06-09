@@ -67,7 +67,7 @@ body {
 .hero {
   position: relative;
   height: 80vh;
-  background: url('/src/images/bg.png') center/cover no-repeat;
+  background: url('/deepsum-frontend/src/images/bg.png') center/cover no-repeat;
   border-radius: 25px;
   margin: 30px;
   display: flex;
