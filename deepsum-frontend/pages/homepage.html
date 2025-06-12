@@ -1,289 +1,156 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DeepSum</title>
-  <link rel="stylesheet" href="src/css/homepage.css" />
-</head>
-<body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">DEEPSUM</div>
-      <ul class="nav-links">
-        <li><a href="#">Beranda</a></li>
-        <li><a href="#">Fitur</a></li>
-        <li><a href="#">Layanan</a></li>
-        <li><a href="#">Tim</a></li>
-        <li><a href="#">Kontak</a></li>
-      </ul>
-    </nav>
-  </header>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeepSum: Text Summarizer</title>
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Sidebar -->
+      <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <button class="new-chat-btn" id="newChatBtn">
+            <span>📄</span>
+            New Analysis
+          </button>
+        </div>
 
-  <section class="hero">
-    <div class="hero-overlay">
-      <div class="course-badge">AI TEXT SUMMARIZER</div>
-      <h1>DeepSum</h1>
-      <p>DeepSum adalah web berbasis AI yang dirancang untuk merangkum teks panjang secara otomatis dan efisien. Cocok untuk pelajar, peneliti, dan profesional yang butuh ringkasan cepat.</p>
-      <div class="hero-buttons">
-        <button class="demo-btn" id="startBtn">Mulai</button>
-        <button class="info-btn" id="howBtn">How to Use DeepSum?</button>
-      </div>
-    </div>
-  </section>
+        <div class="sidebar-content">
+          <div class="chat-history">
+            <div class="history-section">
+              <div class="history-title">Today</div>
+              <div class="history-item active">
+                <span class="file-icon">📊</span>
+                <span>Sales Report Q4.xlsx</span>
+              </div>
+              <div class="history-item">
+                <span class="file-icon">📝</span>
+                <span>Meeting Notes.docx</span>
+              </div>
+              <div class="history-item">
+                <span class="file-icon">🖼️</span>
+                <span>Product Images.zip</span>
+              </div>
+            </div>
 
-    <!-- How to Use -->
-  <section id="howSection" class="content-section">
-  <div class="container">
-    <div class="faq-section">
-      <div class="faq-item">
-        <button class="faq-question">Bagaimana cara memasukkan teks?</button>
-        <div class="faq-answer">
-          <p>Klik tombol “Mulai” di beranda, lalu tempelkan atau ketik teks panjang yang ingin Anda ringkas.</p>
+            <div class="history-section">
+              <div class="history-title">Yesterday</div>
+              <div class="history-item">
+                <span class="file-icon">📋</span>
+                <span>Project Proposal.pdf</span>
+              </div>
+              <div class="history-item">
+                <span class="file-icon">📈</span>
+                <span>Analytics Data.csv</span>
+              </div>
+            </div>
+
+            <div class="history-section">
+              <div class="history-title">Last 7 Days</div>
+              <div class="history-item">
+                <span class="file-icon">🎨</span>
+                <span>Design Assets.psd</span>
+              </div>
+              <div class="history-item">
+                <span class="file-icon">💻</span>
+                <span>Code Review.txt</span>
+              </div>
+              <div class="history-item">
+                <span class="file-icon">📊</span>
+                <span>Budget Analysis.xlsx</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-footer">
+          <div class="user-info">
+            <div class="user-avatar"></div>
+            <div class="user-name"></div>
+            <button class="logout-btn">Logout</button>
+          </div>
         </div>
       </div>
-      <div class="faq-item">
-        <button class="faq-question">Apakah saya bisa mengunggah file?</button>
-        <div class="faq-answer">
-          <p>Ya, DeepSum mendukung pengunggahan file PDF dan TXT untuk dirangkum secara otomatis.</p>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="main-header">
+          <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+          <h1 class="chat-title">DeepSum : Text Summarizer</h1>
+          <div></div>
+        </div>
+
+        <div class="chat-area">
+          <div class="upload-container">
+            <h2 class="upload-title">Analyze Your Files</h2>
+            <p class="upload-subtitle">
+              Upload PDF Document for
+              AI-powered analysis
+            </p>
+
+            <div class="file-upload-area" id="uploadArea">
+              <div class="upload-icon">📁</div>
+              <div class="upload-text">Drop your file here</div>
+              <div class="upload-subtext">or click to browse</div>
+              <button class="upload-btn" id="uploadBtn">Choose File</button>
+              <div class="supported-formats">
+                Only Supports .pdf, 1 Page, Max 512 Words
+              </div>
+              <input
+                type="file"
+                class="file-input"
+                id="fileInput"
+                accept="*/*"
+              />
+            </div>
+            
+        <!-- file analyze -->
+        <div class="file-preview" id="filePreview">
+          <div class="file-info">
+            <div class="file-type-icon" id="fileTypeIcon">📄</div>
+            <div class="file-details">
+              <h3 id="fileName">document.pdf</h3>
+              <p id="fileSize">2.4 MB • PDF Document</p>
+            </div>
+            <button class="change-file-btn" id="changeFileBtn">
+              Change File
+            </button>
+          </div>
+
+          <!-- Mode Selection -->
+          <div class="mode-selection">
+            <p>Select Analysis Mode:</p>
+            <label>
+              <input type="radio" name="analysisMode" value="abstraction" />
+              Abstraction (Tulis dengan kata baru)
+            </label>
+            <label>
+              <input type="radio" name="analysisMode" value="extraction" />
+              Extraction (Rangkum dari teks)
+            </label>
+          </div>
+
+          <!-- Analyze Button (hidden awalnya) -->
+          <button class="analyze-btn hidden" id="analyzeBtn">
+            <span class="loading-spinner" id="loadingSpinner"></span>
+            <span id="analyzeBtnText">Analyze File</span>
+          </button>
+        </div>
+
+        </div>
+        <!-- Chat Section -->
+      <div class="chat-section" id="chatSection" style="display: none;">
+        <div class="chat-log" id="chatLog">
+          <div class="chat-bubble system"></div>
+        </div>
+        <div class="chat-input">
+          <input type="text" id="userInput" placeholder="QnA Section">
+          <button id="sendBtn">Kirim</button>
         </div>
       </div>
-      <div class="faq-item">
-        <button class="faq-question">Bagaimana hasil ringkasan ditampilkan?</button>
-        <div class="faq-answer">
-          <p>Setelah Anda klik tombol “Ringkas Sekarang”, hasil ringkasan akan muncul di bawah form input.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Apakah saya bisa menyalin hasil ringkasan?</button>
-        <div class="faq-answer">
-          <p>Tentu, Anda bisa langsung menyalin hasil ringkasan atau mengunduhnya sebagai file .txt.</p>
-        </div>
-      </div>
-    </div>
 
-    <div class="info-section">
-      <h2>Cara Menggunakan DeepSum</h2>
-      <p>DeepSum dirancang untuk membantu Anda merangkum dokumen panjang secara cepat dan efisien menggunakan teknologi kecerdasan buatan. Cukup masukkan teks, unggah file, lalu klik tombol ringkas. Hasil akan langsung ditampilkan dalam hitungan detik.</p>
-      <p>Cocok untuk pelajar, peneliti, dan siapa saja yang perlu memahami inti dari dokumen secara instan.</p>
-    </div>
-  </div>
-  </section>
-
-  <footer class="footer">
-      <div class="footer-container">
-    <div class="footer-column">
-      <h3>Explore DeepSum</h3>
-      <ul>
-        <li><a href="#">Fitur Utama</a></li>
-        <li><a href="#">Tentang Kami</a></li>
-        <li><a href="#">Cara Kerja AI</a></li>
-        <li><a href="#">Kisah Pengguna</a></li>
-        <li><a href="#">Kebijakan Etika</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-column">
-      <h3>Bantuan</h3>
-      <ul>
-        <li><a href="#">Hubungi Kami</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Laporkan Masalah</a></li>
-      </ul>
-    </div>
-
-        <div class="footer-column">
-      <h3>Terhubung dengan Kami</h3>
-      <ul class="social-links">
-        <li>
-          <a href="#">
-            <img src="/src/images/Instagram.png" alt="Instagram"> Instagram
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="/src/images/Youtube.png" alt="YouTube"> YouTube
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="/src/images/Facebook.png" alt="Facebook"> Facebook
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="/src/images/Linkedin.png" alt="LinkedIn"> LinkedIn
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <div class="footer-links">
-      <a href="#">Kebijakan Privasi</a>
-      <a href="#">Syarat & Ketentuan</a>
-      <a href="#">Cookie Preferences</a>
-    </div>
-    <p>&copy; 2025 DeepSum. All rights reserved.</p>
-  </div>
-  </footer>
-
-  <script>
-    document.getElementById('startBtn').addEventListener('click', () => {
-      document.getElementById('startSection').scrollIntoView({ behavior: 'smooth' });
-    });
-
-    document.getElementById('howBtn').addEventListener('click', () => {
-      document.getElementById('howSection').scrollIntoView({ behavior: 'smooth' });
-    });
-  </script>
-
-  <script src="src/js/homepage.js"></script>
-</body>
-</html>
-=======
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DeepSum</title>
-  <link rel="stylesheet" href="/deepsum-frontend/src/css/homepage.css" />
-</head>
-<body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">DEEPSUM</div>
-      <ul class="nav-links">
-        <li><a href="#">Beranda</a></li>
-        <li><a href="#">Fitur</a></li>
-        <li><a href="#">Layanan</a></li>
-        <li><a href="#">Tim</a></li>
-        <li><a href="#">Kontak</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <div class="hero-overlay">
-      <div class="course-badge">AI TEXT SUMMARIZER</div>
-      <h1>DeepSum</h1>
-      <p>DeepSum adalah web berbasis AI yang dirancang untuk merangkum teks panjang secara otomatis dan efisien. Cocok untuk pelajar, peneliti, dan profesional yang butuh ringkasan cepat.</p>
-      <div class="hero-buttons">
-        <button class="demo-btn" id="startBtn">Mulai</button>
-        <button class="info-btn" id="howBtn">How to Use DeepSum?</button>
-      </div>
-    </div>
-  </section>
-
-    <!-- How to Use -->
-  <section id="howSection" class="content-section">
-  <div class="container">
-    <div class="faq-section">
-      <div class="faq-item">
-        <button class="faq-question">Bagaimana cara memasukkan teks?</button>
-        <div class="faq-answer">
-          <p>Klik tombol “Mulai” di beranda, lalu tempelkan atau ketik teks panjang yang ingin Anda ringkas.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Apakah saya bisa mengunggah file?</button>
-        <div class="faq-answer">
-          <p>Ya, DeepSum mendukung pengunggahan file PDF dan TXT untuk dirangkum secara otomatis.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Bagaimana hasil ringkasan ditampilkan?</button>
-        <div class="faq-answer">
-          <p>Setelah Anda klik tombol “Ringkas Sekarang”, hasil ringkasan akan muncul di bawah form input.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Apakah saya bisa menyalin hasil ringkasan?</button>
-        <div class="faq-answer">
-          <p>Tentu, Anda bisa langsung menyalin hasil ringkasan atau mengunduhnya sebagai file .txt.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="info-section">
-      <h2>Cara Menggunakan DeepSum</h2>
-      <p>DeepSum dirancang untuk membantu Anda merangkum dokumen panjang secara cepat dan efisien menggunakan teknologi kecerdasan buatan. Cukup masukkan teks, unggah file, lalu klik tombol ringkas. Hasil akan langsung ditampilkan dalam hitungan detik.</p>
-      <p>Cocok untuk pelajar, peneliti, dan siapa saja yang perlu memahami inti dari dokumen secara instan.</p>
-    </div>
-  </div>
-  </section>
-
-  <footer class="footer">
-      <div class="footer-container">
-    <div class="footer-column">
-      <h3>Explore DeepSum</h3>
-      <ul>
-        <li><a href="#">Fitur Utama</a></li>
-        <li><a href="#">Tentang Kami</a></li>
-        <li><a href="#">Cara Kerja AI</a></li>
-        <li><a href="#">Kisah Pengguna</a></li>
-        <li><a href="#">Kebijakan Etika</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-column">
-      <h3>Bantuan</h3>
-      <ul>
-        <li><a href="#">Hubungi Kami</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Laporkan Masalah</a></li>
-      </ul>
-    </div>
-
-        <div class="footer-column">
-      <h3>Terhubung dengan Kami</h3>
-      <ul class="social-links">
-        <li>
-          <a href="#">
-            <img src="/deepsum-frontend/src/images/Instagram.png" alt="Instagram"> Instagram
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="/deepsum-frontend/src/images/Youtube.png" alt="YouTube"> YouTube
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="/deepsum-frontend/src/images/Facebook.png" alt="Facebook"> Facebook
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="/deepsum-frontend/src/images/Linkedin.png" alt="LinkedIn"> LinkedIn
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <div class="footer-links">
-      <a href="#">Kebijakan Privasi</a>
-      <a href="#">Syarat & Ketentuan</a>
-      <a href="#">Cookie Preferences</a>
-    </div>
-    <p>&copy; 2025 DeepSum. All rights reserved.</p>
-  </div>
-  </footer>
-
-  <script>
-    document.getElementById('startBtn').addEventListener('click', () => {
-      document.getElementById('startSection').scrollIntoView({ behavior: 'smooth' });
-    });
-
-    document.getElementById('howBtn').addEventListener('click', () => {
-      document.getElementById('howSection').scrollIntoView({ behavior: 'smooth' });
-    });
-  </script>
-
-  <script src="/deepsum-frontend/src/js/homepage.js"></script>
-</body>
+    <!-- Mobile Overlay -->
+    <div class="overlay" id="overlay"></div>
+  </body>
 </html>
