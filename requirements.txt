@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+supabase
+groq
+PyPDF2
+python-dotenv
+tensorflow
+transformers
+PyJWT
+lexrank
+nltk
+python-multipart
+pydantic
