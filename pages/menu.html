@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Upload Page</title>
+    <link rel="stylesheet" href="../src/css/menu.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="user-info">
+          <div class="avatar"></div>
+          <h3>User</h3>
+        </div>
+        <nav class="nav-menu">
+          <a href="#" class="menu-item active" data-menu="project"
+            ><i class="icon"></i> Project</a
+          >
+          <a href="#" class="menu-item" data-menu="menu1"
+            ><i class="icon">≡</i> Menu 1</a
+          >
+          <a href="#" class="menu-item" data-menu="menu2"
+            ><i class="icon">≡</i> Menu 2</a
+          >
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <h1>Drop your File here</h1>
+        <div class="drop-zone" id="dropZone">
+          <input type="file" id="fileInput" />
+          <label
+            for="fileInput"
+            class="folder-icon"
+            title="Click to select file"
+            >📁</label
+          >
+          <div class="file-name" id="fileName">No file chosen</div>
+        </div>
+
+        <div class="download-section" id="downloadSection">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              flex-wrap: wrap;
+              gap: 10px;
+            "
+          >
+            <h2 style="margin: 0">Ringkasan Siap Diunduh</h2>
+            <div>
+              <button id="downloadBtn">⬇ Download Summary</button>
+              <button id="showRecommendationBtn">
+                Rekomendasi Paper Serupa
+              </button>
+            </div>
+          </div>
+        </div>
+
+       <div class="chat-section hidden" id="chatSection">
+  <div class="chat-log" id="chatLog">
+    <div class="chat-bubble system">
+      Still can't get the point? Ask me!
+    </div>
+  </div>
+  <div class="chat-input">
+    <input type="text" id="userInput" placeholder="Tanyakan sesuatu..." />
+    <button id="sendBtn">Kirim</button>
+  </div>
+</div>
+
+        <!-- rekomendasi paper -->
+        <div id="recommendationPopup" class="hidden popup-overlay">
+          <div class="popup-content">
+            <h2>Rekomendasi Paper Serupa</h2>
+            <div id="paperList">
+              <div class="paper-item">
+                <h4>Judul Paper 1</h4>
+                <p>
+                  Abstrak paper 1 lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit...
+                </p>
+                <div class="source">Sumber: ScienceDirect</div>
+                <button class="pick-btn">Pilih</button>
+              </div>
+              <div class="paper-item">
+                <h4>Judul Paper 2</h4>
+                <p>
+                  Abstrak paper 2 lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit...
+                </p>
+                <div class="source">Sumber: IEEE</div>
+                <button class="pick-btn">Pilih</button>
+              </div>
+            </div>
+            <button id="minimizePopupBtn">Minimize</button>
+          </div>
+        </div>
+
+        <!-- summarize baru -->
+        <div class="download-section hidden" id="downloadSection2">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              flex-wrap: wrap;
+              gap: 10px;
+            "
+          >
+            <h2 style="margin: 0">Ringkasan Siap Diunduh</h2>
+            <div>
+              <button id="downloadBtn">⬇ Download Summary</button>
+              <button id="showRecommendationBtn">
+                Rekomendasi Paper Serupa
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-section hidden" id="recommendationSummarySection">
+          <div class="chat-log" id="recommendationChatLog">
+            <div class="chat-bubble system">
+              Still cant get the point? Ask me!
+            </div>
+          </div>
+          <div class="chat-input">
+            <input
+              type="text"
+              placeholder="Tanyakan sesuatu tentang paper baru..."
+            />
+            <button>Kirim</button>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="src/js/menu.js"></script>
+  </body>
+</html>

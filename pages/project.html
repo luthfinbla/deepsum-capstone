@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Upload Page</title>
+    <link rel="stylesheet" href="../src/css/project.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="user-info">
+          <div class="avatar"></div>
+          <h3>User</h3>
+        </div>
+        <nav class="nav-menu">
+          <a href="#" class="menu-item active" data-menu="home"
+            ><i class="icon"></i> Project</a
+          >
+          <a href="menu.html" class="menu-item" data-menu="menu1"
+            ><i class="icon">≡</i> Menu 1</a
+          >
+          <a href="menu2.html" class="menu-item" data-menu="menu2"
+            ><i class="icon">≡</i> Menu 2</a
+          >
+        </nav>
+      </aside>
+      <section class="project-section">
+        <h2>Ringkasan Saya</h2>
+        <ul class="project-list">
+          <li class="project-item" data-target="menu1">
+            Menu 1 - Ringkasan Teks A
+          </li>
+          <li class="project-item" data-target="menu2">
+            Menu 2 - Ringkasan Teks B
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="src/js/project.js"></script>
+  </body>
+</html>

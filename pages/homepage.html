@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeepSum: Text Summarizer</title>
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Sidebar -->
+      <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <button class="new-chat-btn" id="newChatBtn">
+            <span>📄</span>
+            New Analysis
+          </button>
+        </div>
+
+        <div class="sidebar-content">
+          <div class="chat-history">
+            <div class="history-section">
+              <div class="history-title">Today</div>
+              <div class="history-item active">
+                <span class="file-icon">📊</span>
+                <span>Sales Report Q4.xlsx</span>
+              </div>
+              <div class="history-item">
+                <span class="file-icon">📝</span>
+                <span>Meeting Notes.docx</span>
+              </div>
+              <div class="history-item">
+                <span class="file-icon">🖼️</span>
+                <span>Product Images.zip</span>
+              </div>
+            </div>
+
+            <div class="history-section">
+              <div class="history-title">Yesterday</div>
+              <div class="history-item">
+                <span class="file-icon">📋</span>
+                <span>Project Proposal.pdf</span>
+              </div>
+              <div class="history-item">
+                <span class="file-icon">📈</span>
+                <span>Analytics Data.csv</span>
+              </div>
+            </div>
+
+            <div class="history-section">
+              <div class="history-title">Last 7 Days</div>
+              <div class="history-item">
+                <span class="file-icon">🎨</span>
+                <span>Design Assets.psd</span>
+              </div>
+              <div class="history-item">
+                <span class="file-icon">💻</span>
+                <span>Code Review.txt</span>
+              </div>
+              <div class="history-item">
+                <span class="file-icon">📊</span>
+                <span>Budget Analysis.xlsx</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-footer">
+          <div class="user-info">
+            <div class="user-avatar"></div>
+            <div class="user-name"></div>
+            <button class="logout-btn">Logout</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="main-header">
+          <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+          <h1 class="chat-title">DeepSum : Text Summarizer</h1>
+          <div></div>
+        </div>
+
+        <div class="chat-area">
+          <div class="upload-container">
+            <h2 class="upload-title">Analyze Your Files</h2>
+            <p class="upload-subtitle">
+              Upload PDF Document for
+              AI-powered analysis
+            </p>
+
+            <div class="file-upload-area" id="uploadArea">
+              <div class="upload-icon">📁</div>
+              <div class="upload-text">Drop your file here</div>
+              <div class="upload-subtext">or click to browse</div>
+              <button class="upload-btn" id="uploadBtn">Choose File</button>
+              <div class="supported-formats">
+                Only Supports .pdf, 1 Page, Max 512 Words
+              </div>
+              <input
+                type="file"
+                class="file-input"
+                id="fileInput"
+                accept="*/*"
+              />
+            </div>
+            
+        <!-- file analyze -->
+        <div class="file-preview" id="filePreview">
+          <div class="file-info">
+            <div class="file-type-icon" id="fileTypeIcon">📄</div>
+            <div class="file-details">
+              <h3 id="fileName">document.pdf</h3>
+              <p id="fileSize">2.4 MB • PDF Document</p>
+            </div>
+            <button class="change-file-btn" id="changeFileBtn">
+              Change File
+            </button>
+          </div>
+
+          <!-- Mode Selection -->
+          <div class="mode-selection">
+            <p>Select Analysis Mode:</p>
+            <label>
+              <input type="radio" name="analysisMode" value="abstraction" />
+              Abstraction (Tulis dengan kata baru)
+            </label>
+            <label>
+              <input type="radio" name="analysisMode" value="extraction" />
+              Extraction (Rangkum dari teks)
+            </label>
+          </div>
+
+          <!-- Analyze Button (hidden awalnya) -->
+          <button class="analyze-btn hidden" id="analyzeBtn">
+            <span class="loading-spinner" id="loadingSpinner"></span>
+            <span id="analyzeBtnText">Analyze File</span>
+          </button>
+        </div>
+
+        </div>
+        <!-- Chat Section -->
+      <div class="chat-section" id="chatSection" style="display: none;">
+        <div class="chat-log" id="chatLog">
+          <div class="chat-bubble system"></div>
+        </div>
+        <div class="chat-input">
+          <input type="text" id="userInput" placeholder="QnA Section">
+          <button id="sendBtn">Kirim</button>
+        </div>
+      </div>
+
+    <!-- Mobile Overlay -->
+    <div class="overlay" id="overlay"></div>
+  </body>
+</html>
